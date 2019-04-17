@@ -11,3 +11,7 @@ $ mkdir ~/haxelib && haxelib setup ~/haxelib
 ```
 $ haxe -main Main --interp
 ```
+### Javascript
+```
+$ haxe -main Main -js main.js
+```
