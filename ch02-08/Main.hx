@@ -107,7 +107,14 @@ abstract AString(String) {
   }
 }
 
+@:enum
+abstract HttpStatus(Int) {
+  var NotFound = 404;
+  var MehodNotAllowd = 405;
+}
+
 class Main {
+
   static public function main() {
     {
       var a = new A();
@@ -169,5 +176,37 @@ class Main {
       var a = new AString("foo");
       trace(a[0]);
     }
+
+    {
+      var status = HttpStatus.NotFound;
+      var msg = printStatus(status);
+      trace(msg);
+    }
+
+    {
+      var myArray = new MyArray();
+      trace(myArray);
+      myArray.push(12);
+      trace(myArray);
+      var pop = myArray.pop();
+      trace(myArray);
+      trace(pop);
+    }
+  }
+
+  static function printStatus(status: HttpStatus) {
+    return switch(status) {
+      case NotFound:
+        "Not found";
+      case MehodNotAllowd:
+        "Mehod not allowd";
+    }
+  }
+}
+
+@:forward(push, pop)
+abstract MyArray<S>(Array<S>) {
+  public inline function new() {
+    this = [];
   }
 }
