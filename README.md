@@ -13,5 +13,9 @@ $ haxe -main Main --interp
 ```
 ### Javascript
 ```
+# Haxe
 $ haxe -main Main -js main.js
+
+# JavaScript
+$ haxe -js main-javascript.js -main Main
 ```
