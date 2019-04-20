@@ -22,6 +22,10 @@ class Main {
   var field = 1;
   var field2 = 2;
 
+  @:isVar public var z(get, set): Int;
+  function get_z() return 1;
+  function set_z(v) return x;  
+
   function new() {
     trace('ro: $ro');
     trace('wo: $wo');
@@ -53,6 +57,9 @@ class Main {
   }
    
   static public function main() {
-    new Main();
+    var a = new Main();
+    var b = new Main();
+    b.z += 1;
+    trace(b.z);
   }
 }
