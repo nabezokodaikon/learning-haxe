@@ -22,6 +22,12 @@ class Main {
       var b = cast(c, Base);
       trace(b);
     }
+
+    {
+      // var a = "11";
+      // var r = (a: Int)
+      // trace(r);
+    }
   }
 }
 
