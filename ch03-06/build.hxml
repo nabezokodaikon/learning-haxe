@@ -1,0 +1,5 @@
+--interp
+
+-cp ./
+
+-main Main
